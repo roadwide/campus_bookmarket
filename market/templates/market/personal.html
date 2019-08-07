@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}个人中心{% endblock %}
+{% block content %}
+{% if booklist %}
+    <table border="1">
+        <thead>
+            <th>id</th>
+            <th>username</th>
+            <th>bookname</th>
+            <th>price</th>
+            <th>major</th>
+            <th>grade</th>
+            <th>qq</th>
+            <th>pic</th>
+            <th>type</th>
+            <th>编辑</th>
+        </thead>
+        <tbody>
+        {% for book in booklist %}
+            <tr>
+                <td>{{ book.id }}</td>
+                <td>{{ book.username }}</td>
+                <td>{{ book.bookname }}</td>
+                <td>{{ book.price }}</td>
+                <td>{{ book.major }}</td>
+                <td>{{ book.grade }}</td>
+                <td>{{ book.qq }}</td>
+                <td>{{ book.pic }}</td>
+                <td>{{ book.type }}</td>
+                <td><a href="/delete/{{ book.id }}">删除</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endif %}
+{% endblock %}

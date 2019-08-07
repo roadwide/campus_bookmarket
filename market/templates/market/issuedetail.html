@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}发布详情{% endblock %}
+{% block content %}
+<table border="1">
+    <thead>
+    <tr>
+        <th>username</th>
+        <th>bookname</th>
+        <th>price</th>
+        <th>major</th>
+        <th>grade</th>
+        <th>qq</th>
+        <th>pic</th>
+        <th>type</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>{{ request.session.user_name }}</td>
+        <td>{{ bookname }}</td>
+        <td>{{ price }}</td>
+        <td>{{ major }}</td>
+        <td>{{ grade }}</td>
+        <td>{{ qq }}</td>
+        <td>{{ pic }}</td>
+        <td>{{ type }}</td>
+    </tr>
+    </tbody>
+</table>
+{% endblock%}

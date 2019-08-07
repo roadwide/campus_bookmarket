@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}商场{% endblock %}
+{% block content %}
+{% if booklist %}
+    <table border="1">
+        <thead>
+            <th>id</th>
+            <th>username</th>
+            <th>bookname</th>
+            <th>price</th>
+            <th>major</th>
+            <th>grade</th>
+            <th>qq</th>
+            <th>pic</th>
+            <th>type</th>
+        </thead>
+        <tbody>
+        {% for book in booklist %}
+            <tr>
+                <td>{{ book.id }}</td>
+                <td>{{ book.username }}</td>
+                <td>{{ book.bookname }}</td>
+                <td>{{ book.price }}</td>
+                <td>{{ book.major }}</td>
+                <td>{{ book.grade }}</td>
+                <td>{{ book.qq }}</td>
+                <td>{{ book.pic }}</td>
+                <td>{{ book.type }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>
+    没有相关信息
+    </p>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}查询{% endblock %}
+{% block content %}
+    <style type="text/css">
+        label {
+            width: 70px;
+        }
+    </style>
+    <div class="container">
+        <div class="col">
+            <form action="/search/" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ search_form.major.label_tag }}
+                    {{ search_form.major }}
+                </div>
+                <div class="form-group">
+                    {{ search_form.grade.label_tag }}
+                    {{ search_form.grade }}
+                </div>
+                <div class="form-group">
+                    {{ search_form.type.label_tag }}
+                    {{ search_form.type }}
+                </div>
+                <button type="submit" class="btn btn-primary">查询</button>
+            </form>
+        </div>
+    </div>
+{% endblock%}

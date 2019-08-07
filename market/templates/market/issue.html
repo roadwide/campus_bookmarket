@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %}发布{% endblock %}
+{% block content %}
+    <style type="text/css">
+        label {
+            width: 70px;
+        }
+    </style>
+    <div class="container">
+        <div class="col">
+            <form action="/issue/" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ market_form.type.label_tag }}
+                    {{ market_form.type }}
+                </div>
+                <div class="form-group">
+                    {{ market_form.bookname.label_tag }}
+                    {{ market_form.bookname }}
+                </div>
+                <div class="form-group">
+                    {{ market_form.pic.label_tag }}
+                    {{ market_form.pic }}
+                </div>
+                <div class="form-group">
+                    {{ market_form.major.label_tag }}
+                    {{ market_form.major }}
+                </div>
+                <div class="form-group">
+                    {{ market_form.grade.label_tag }}
+                    {{ market_form.grade }}
+                </div>
+                <div class="form-group">
+                    {{ market_form.price.label_tag }}
+                    {{ market_form.price }}
+                </div>
+                <div class="form-group">
+                    {{ market_form.qq.label_tag }}
+                    {{ market_form.qq }}
+                </div>
+                <button type="submit" class="btn btn-primary">发布</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
